@@ -3,8 +3,8 @@ title: Like to Dream
 description: >
   Development & Memo blog
 
-baseurl: "/home" # the subpath of your site, e.g. /blog/
-url: "https://alex6095.github.io" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://alex6095.github.io/" # the base hostname & protocol for your site
 
 author:
   fullname: Sangmin Lee
