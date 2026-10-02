@@ -1,15 +1,32 @@
----
-layout: page
-title: 404
-permalink: /404.html
-sitemap:
-  exclude: 'yes'
----
+<!DOCTYPE html>
+<html lang="en">
 
-<h2 class="go-home">
-I suggest you get <a href="{{ '/' | prepend: site.baseurl }}">home</a>, it's 404 and it's getting dark!
-</h2>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found · Sangmin Lee</title>
+  <meta name="robots" content="noindex">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
 
+<body>
+  <nav class="nav" aria-label="Main">
+    <div class="container">
+      <a class="nav-brand" href="/">Sangmin Lee</a>
+    </div>
+  </nav>
 
-<!-- Adding the glitch effect -->
-<script> document.getElementsByTagName('body')[0].classList.add('glitch'); </script>
+  <main class="container not-found">
+    <div>
+      <h1 class="section-title">Page not found</h1>
+      <p>This page does not exist. <a href="/">Go to the homepage</a>.</p>
+    </div>
+  </main>
+</body>
+
+</html>
