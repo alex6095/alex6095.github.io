@@ -41,7 +41,7 @@ All content is in `index.html`, and each section is marked by an HTML comment.
 
 | To change | Do this |
 | --- | --- |
-| **Add a paper** | Copy one `<li class="pub">…</li>` block in the Publications section. Put the newest paper first. Save its thumbnail as `assets/img/papers/<name>.webp`. Bold my name with `<b>Sangmin Lee</b>`. Leave out any `chip` link that doesn't exist yet. If the paper has no public link, put the PDF in `assets/papers/<name>-<venue><year>.pdf`. |
+| **Add a paper** | Copy one `<li class="pub">…</li>` block in the Publications section: international venues in the first list, domestic (Korean) venues under "Domestic (Korean) Papers". Put the newest paper first. Save its thumbnail as `assets/img/papers/<name>.webp`. Bold my name with `<b>Sangmin Lee</b>`. Leave out any `chip` link that doesn't exist yet. If the paper has no public link, put the PDF in `assets/papers/<name>-<venue><year>.pdf`. |
 | **Add news** | Add an `<li>` at the top of the `<ul class="news">` list. Keep only the latest few items. |
 | **Change the profile photo** | Replace `assets/img/profile.jpg` with a square image about 400 px wide. Strip its metadata first, because phone photos often carry GPS EXIF. |
 | **Add a CV / Google Scholar link** | Add another `<a class="button" href="…">` to `hero-actions`. For a CV, upload `assets/cv.pdf` and link to it. |
