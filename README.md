@@ -59,6 +59,15 @@ Other repositories with Pages enabled are served under this same domain. For exa
 Don't create a top-level folder here with the name of such a repository, because the two paths would
 conflict.
 
+## Google Search Console
+
+`googled8d888cffc50b26d.html` is the ownership-verification file for the
+`https://alex6095.github.io/` URL-prefix property. Publish it at the site root and keep it there after
+verification. Once it is publicly accessible, click **Verify** in Search Console, submit
+`https://alex6095.github.io/sitemap.xml`, and use URL Inspection to request indexing for the homepage
+and project page. Verification and indexing requests do not guarantee immediate inclusion in Google
+Search.
+
 ## Credits
 
 - The layout was inspired by [Youngju Na's homepage](https://youngju-na.github.io/).
