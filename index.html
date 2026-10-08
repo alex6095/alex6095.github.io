@@ -56,7 +56,7 @@
 
   <nav class="nav" aria-label="Main">
     <div class="container">
-      <a class="nav-brand" href="#top">Sangmin Lee</a>
+      <a class="nav-brand" href="./" data-scroll-top>Sangmin Lee</a>
       <div class="nav-links">
         <a href="#news">News</a>
         <a href="#publications">Publications</a>
@@ -296,13 +296,30 @@
   <footer class="footer">
     <div class="container">
       <span>© 2026 Sangmin Lee</span>
-      <a href="#top">Back to top</a>
+      <a href="./" data-scroll-top>Back to top</a>
     </div>
   </footer>
 
   <script>
     // Highlight the nav link for the section in view. The page works without this.
     (function () {
+      function normalizeTop() {
+        if (location.hash !== '#top') return;
+        history.replaceState(history.state, '', location.pathname + location.search);
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
+      document.querySelectorAll('[data-scroll-top]').forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+          event.preventDefault();
+          if (location.hash) history.pushState(null, '', location.pathname + location.search);
+          document.querySelector('.nav-brand').focus({ preventScroll: true });
+          window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+        });
+      });
+      normalizeTop();
+      window.addEventListener('hashchange', normalizeTop);
+      window.addEventListener('pageshow', normalizeTop);
       var links = [].slice.call(document.querySelectorAll('.nav-links a'));
       var targets = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
 
