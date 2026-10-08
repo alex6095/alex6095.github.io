@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
   <!-- Only the glyphs of the Korean name, so it renders the same on every device. -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&text=%EC%9D%B4%EC%83%81%EB%AF%BC&display=swap">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261008b">
 
   <script type="application/ld+json">
   {
@@ -300,6 +300,11 @@
     </div>
   </footer>
 
+  <a class="back-to-top" href="./" data-scroll-top aria-label="Back to top" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 11 6-6 6 6 M12 5v14"/></svg>
+    <span>Top</span>
+  </a>
+
   <script>
     // Highlight the nav link for the section in view. The page works without this.
     (function () {
@@ -322,6 +327,8 @@
       window.addEventListener('pageshow', normalizeTop);
       var links = [].slice.call(document.querySelectorAll('.nav-links a'));
       var targets = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+      var topLink = document.querySelector('.back-to-top');
+      var footerTopLink = document.querySelector('.footer [data-scroll-top]');
 
       function update() {
         var line = window.innerHeight * 0.35;
@@ -332,10 +339,15 @@
         });
         if (atBottom) current = targets.length - 1;
         links.forEach(function (a, i) { a.classList.toggle('is-active', i === current); });
+        // The footer already provides a home link; avoid covering it on mobile.
+        var footerLinkBounds = footerTopLink.getBoundingClientRect();
+        var footerLinkVisible = footerLinkBounds.top >= 0 && footerLinkBounds.bottom <= window.innerHeight;
+        topLink.hidden = window.scrollY < Math.max(400, window.innerHeight * 0.8) || footerLinkVisible;
       }
 
       window.addEventListener('scroll', update, { passive: true });
       window.addEventListener('resize', update);
+      window.addEventListener('pageshow', update);
       update();
     })();
   </script>
