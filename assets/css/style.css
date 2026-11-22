@@ -1,10 +1,11 @@
 /* ==========================================================================
    alex6095.github.io — single-page academic homepage
-   Plain CSS, no build step. Light/dark follow the visitor's system setting.
+   Shared styles and light color palette. Dark colors are in dark.css.
    ========================================================================== */
 
 /* ---------- Tokens ---------- */
 :root {
+  color-scheme: light;
   --bg: #ffffff;
   --bg-alt: #f5f6f8;
   --surface: #ffffff;
@@ -27,26 +28,6 @@
   --gap: 40px;
   --nav-h: 52px;
   --radius: 14px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0e0f12;
-    --bg-alt: #16181d;
-    --surface: #1d2027;
-    --text: #eceef3;
-    --text-2: #c3c7d1;
-    --text-3: #9298a6;
-    --text-4: #6c7280;
-    --line: #2c3039;
-    --line-soft: #23262e;
-    --link: #6aa9ff;
-    --accent: #a9a5ff;
-    --chip-ring: rgba(255, 255, 255, 0.12);
-    --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
-    --nav-bg: rgba(14, 15, 18, 0.78);
-    --nav-line: rgba(255, 255, 255, 0.08);
-  }
 }
 
 /* ---------- Base ---------- */
@@ -183,8 +164,16 @@ a:hover {
   text-decoration: none;
 }
 
+.nav-tools {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
 .nav-links {
   display: flex;
+  min-width: 0;
   gap: 28px;
 }
 
@@ -199,6 +188,42 @@ a:hover {
 .nav-links a.is-active {
   color: var(--text);
   text-decoration: none;
+}
+
+.theme-toggle {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-3);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle[hidden],
+.theme-toggle[data-theme="light"] .theme-sun,
+.theme-toggle[data-theme="dark"] .theme-moon {
+  display: none;
+}
+
+.theme-toggle:hover {
+  background: var(--bg-alt);
+  color: var(--text);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 /* ---------- Hero ---------- */
@@ -656,7 +681,8 @@ a.pub-thumb:hover {
 }
 
 @media print {
-  .back-to-top {
+  .back-to-top,
+  .theme-toggle {
     display: none;
   }
 }
@@ -712,7 +738,11 @@ a.pub-thumb:hover {
   }
 
   .nav .container {
-    gap: 20px;
+    gap: 12px;
+  }
+
+  .nav-tools {
+    gap: 4px;
   }
 
   .nav-links {

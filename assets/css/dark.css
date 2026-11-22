@@ -1,0 +1,19 @@
+/* Dark color palette */
+:root {
+  color-scheme: dark;
+  --bg: #0e0f12;
+  --bg-alt: #16181d;
+  --surface: #1d2027;
+  --text: #eceef3;
+  --text-2: #c3c7d1;
+  --text-3: #9298a6;
+  --text-4: #6c7280;
+  --line: #2c3039;
+  --line-soft: #23262e;
+  --link: #6aa9ff;
+  --accent: #a9a5ff;
+  --chip-ring: rgba(255, 255, 255, 0.12);
+  --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  --nav-bg: rgba(14, 15, 18, 0.78);
+  --nav-line: rgba(255, 255, 255, 0.08);
+}

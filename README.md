@@ -46,7 +46,7 @@ All content is in `index.html`, and each section is marked by an HTML comment.
 | **Change the profile photo** | Replace `assets/img/profile.jpg` with a square image about 400 px wide. Strip its metadata first, because phone photos often carry GPS EXIF. |
 | **Add a CV / Google Scholar link** | Add another `<a class="button" href="…">` to `hero-actions`. For a CV, upload `assets/cv.pdf` and link to it. |
 | **Change position or bio** | Edit `hero-role` and `hero-bio`. Also update `<meta name="description">` in `<head>`. |
-| **Change colors** | Edit the tokens at the top of `assets/css/style.css`. The `prefers-color-scheme: dark` block holds the dark-mode values. |
+| **Change colors** | Edit the light palette at the top of `assets/css/style.css` and the dark palette in `assets/css/dark.css`. |
 
 After any edit, update `<lastmod>` in `sitemap.xml`.
 
